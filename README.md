@@ -12,6 +12,8 @@ When you execute the JAR file, using `$ java -jar altspam.jar`, the Java applica
 The first time, the application shows a settings form where you must put details about the server and the credentials to use. Then, you must train the application selecting some spam messages from your INBOX or JUNK folder. This step is needed to build the initial spam dataset.
 After the initial setup, you can restart the application that will mark spam messages perfoming the action specified.
 
+![altspam screen](https://github.com/echo-devim/AltSpam/raw/master/screen.jpg)
+
 The possible actions are the following:
 *  Do nothing (used only for testing purposes)
 *  Move the detected spam to junk folder (recommended option)
