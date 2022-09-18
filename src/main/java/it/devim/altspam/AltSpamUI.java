@@ -301,7 +301,7 @@ public class AltSpamUI extends javax.swing.JFrame {
             }
         });
 
-        jLabel1.setText("Last received emails:");
+        jLabel1.setText("Last received emails (spam highlighted in yellow):");
 
         jbtnAddSpam.setText("Add to spam");
         jbtnAddSpam.addActionListener(new java.awt.event.ActionListener() {
