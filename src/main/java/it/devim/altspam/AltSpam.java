@@ -31,7 +31,7 @@ public class AltSpam {
         try {
             String serverpath = new File(AltSpam.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent()+"/altspam";
             System.out.println("Starting server at "+serverpath);
-            this.server = new ProcessBuilder(serverpath,"-d").start();
+            this.server = new ProcessBuilder(serverpath,"--server").start();
             Thread.sleep(1000);
         } catch (Exception e) {
             this.server = null;
