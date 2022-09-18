@@ -26,4 +26,14 @@ The application is based on a tray icon and a graphical user interface.
 In the application settings you can specify more than one incoming folder to monitor. Set multiple folders split by commas (e.g. "INBOX,INBOX/folder2,JUNK").
 
 ## How to run
-On Windows just click the `AltSpam` link contained in the release. On Linux run the jar file using `$ java -jar altspam.jar`.
+On Windows just double-click `altspam.jar` package contained in the release. On Linux run the jar file using `$ java -jar altspam.jar`.
+
+## Compilation
+Use the `make_release.sh` script in this repo to compile for Linux and/or Windows. Pass `1` as argument to the script to compile for Linux or `2` for Windows.
+
+Example:
+```sh
+$ bash make_release.sh 2
+```
+
+The output will be saved in the `release` directory.
