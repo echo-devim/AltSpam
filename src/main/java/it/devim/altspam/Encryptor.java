@@ -17,12 +17,7 @@ public class Encryptor {
     
     public Encryptor() {
         this.initVector = "R7BBomI12tVbcc90"; // 16 bytes IV
-        this.key = "BRD1Xd45UUrSsT8 "; // 128 bit key
-        try {
-            Enumeration<NetworkInterface> net = NetworkInterface.getNetworkInterfaces();
-            String macAddress = new BigInteger(1, net.nextElement().getHardwareAddress()).toString(16);
-            this.key = (macAddress + this.key).substring(0, 16);
-        } catch (Exception e) { }
+        this.key = "EncD3f4ultK[y128"; // 128 bit key
     }
     
     public void setKey(String key) {

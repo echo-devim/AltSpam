@@ -28,6 +28,7 @@ public class AltSpam {
     final private byte HEADER_SIZE = 5;
     
     public AltSpam() {
+        //Try to run the API server process
         try {
             String serverpath = new File(AltSpam.class.getProtectionDomain().getCodeSource().getLocation().toURI()).getParent()+"/altspam";
             System.out.println("Starting server at "+serverpath);
@@ -41,6 +42,9 @@ public class AltSpam {
         this.connect();
     }
     
+    /**
+     * Connect to the API server (12 attempts maximum).
+    */
     public void connect() {
         int i = 0;
         while ((this.apiclient == null) || (!this.apiclient.isConnected())) {
@@ -61,6 +65,11 @@ public class AltSpam {
         }
     }
     
+    /**
+     * Call the remote function on server.
+     * Message structure:
+     * |OPERATION|SIZE|DATA|
+    */
     private String callRemoteFunction(OPERATION op, byte[] payload, int len) {
         this.connect();
         String ret = "";

@@ -78,8 +78,9 @@ public class ImapClient {
                 this.prop.setProperty("server", host);
                 this.prop.setProperty("username", username);
                 this.prop.setProperty("password", password);
-                this.prop.setProperty("folder", folder);
+                this.prop.setProperty("folders", folder);
                 this.prop.setProperty("action", action);
+                this.prop.setProperty("junkfolder", "JUNK");
                 this.prop.setProperty("timeperiod", String.valueOf(time));
                 this.prop.store(outputStream, null);
             } catch (IOException e) {
@@ -147,7 +148,7 @@ public class ImapClient {
         try {
             Folder sfolder = store.getFolder(folder);
             sfolder.open(Folder.READ_WRITE);
-            Folder dfolder = store.getFolder("JUNK");
+            Folder dfolder = store.getFolder(this.prop.getProperty("junkfolder", "JUNK"));
             if (!dfolder.exists())
                 dfolder.create(Folder.HOLDS_MESSAGES);
             sfolder.copyMessages(m, dfolder);

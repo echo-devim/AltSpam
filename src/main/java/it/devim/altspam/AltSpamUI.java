@@ -181,7 +181,7 @@ public class AltSpamUI extends javax.swing.JFrame {
                             int abs_i = i+(folder_index*lastn_emails);
                             Message msg = messages[i];
                             //Convert Message into raw format
-                            String mail = "";
+                            String mail;
                             ByteArrayOutputStream output = new ByteArrayOutputStream();
                             msg.writeTo(output);
                             mail = output.toString();
